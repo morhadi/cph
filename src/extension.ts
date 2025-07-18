@@ -36,7 +36,6 @@ import {
 import { submitToCodeForces, submitToKattis } from './submit';
 import JudgeViewProvider from './webview/JudgeView';
 import { getRetainWebviewContextPref } from './preferences';
-import TelemetryReporter from '@vscode/extension-telemetry';
 import config from './config';
 
 let judgeViewProvider: JudgeViewProvider;
@@ -91,8 +90,6 @@ const registerCommands = (context: vscode.ExtensionContext) => {
     context.subscriptions.push(disposable2);
     context.subscriptions.push(disposable3);
     context.subscriptions.push(disposable4);
-    globalThis.reporter = new TelemetryReporter(config.telemetryKey);
-    context.subscriptions.push(globalThis.reporter);
 };
 
 // This method is called when the extension is activated

@@ -5,7 +5,7 @@ import { getJudgeViewProvider } from './extension';
 import telmetry from './telmetry';
 
 export const submitToKattis = async () => {
-    globalThis.reporter.sendTelemetryEvent(telmetry.SUBMIT_TO_KATTIS);
+    (globalThis as any).reporter.sendTelemetryEvent(telmetry.SUBMIT_TO_KATTIS);
     const srcPath = vscode.window.activeTextEditor?.document.fileName;
     if (!srcPath) {
         vscode.window.showErrorMessage(

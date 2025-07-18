@@ -206,7 +206,7 @@ export const deleteBinary = (language: Language, binPath: string) => {
 
 /** Kill all running binaries. Usually, only one should be running at a time. */
 export const killRunning = () => {
-    globalThis.reporter.sendTelemetryEvent(telmetry.KILL_RUNNING);
+    (globalThis as any).reporter.sendTelemetryEvent(telmetry.KILL_RUNNING);
     globalThis.logger.log('Killling binaries');
     runningBinaries.forEach((process) => process.kill());
 };

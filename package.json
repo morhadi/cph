@@ -400,14 +400,16 @@
         "test": "jest out/ --silent=false"
     },
     "devDependencies": {
-        "@types/jest": "^29.5.10",
-        "@types/node": "^20.9.5",
-        "@types/react": "^18.2.38",
-        "@types/react-dom": "^18.2.17",
-        "@types/vscode": "^1.52.0",
+        "@types/jest": "^29.5.14",
+        "@types/node": "^20.19.8",
+        "@types/react": "^18.3.23",
+        "@types/react-dom": "^18.3.7",
+        "@types/react-textarea-autosize": "^4.3.6",
+        "@types/vscode": "^1.102.0",
         "@typescript-eslint/eslint-plugin": "^6.12.0",
         "@typescript-eslint/parser": "^6.12.0",
         "@vscode/codicons": "^0.0.35",
+        "@vscode/extension-telemetry": "^1.0.0",
         "copy-webpack-plugin": "^11.0.0",
         "eslint": "^8.54.0",
         "eslint-config-prettier": "^9.0.0",
@@ -425,8 +427,7 @@
         "python-shell": "^5.0.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
-        "react-textarea-autosize": "^8.5.3",
-        "@vscode/extension-telemetry": "^0.9.0"
+        "react-textarea-autosize": "^8.5.3"
     },
     "repository": {
         "type": "git",

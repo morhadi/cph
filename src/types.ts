@@ -1,5 +1,4 @@
 /* eslint no-var: off */
-import TelemetryReporter from '@vscode/extension-telemetry';
 import * as vscode from 'vscode';
 
 /** Valid name for a VS Code preference section for the extension */
@@ -259,7 +258,6 @@ export type WebViewpersistenceState = {
 };
 
 declare global {
-    var reporter: TelemetryReporter;
     var context: vscode.ExtensionContext;
     var remoteMessage: string | undefined;
     var storedLogs: string;

@@ -27,7 +27,7 @@ let savedResponse: CphEmptyResponse | CphSubmitResponse = emptyResponse;
 const COMPANION_LOGGING = false;
 
 export const submitKattisProblem = (problem: Problem) => {
-    globalThis.reporter.sendTelemetryEvent(telmetry.SUBMIT_TO_KATTIS);
+    (globalThis as any).reporter.sendTelemetryEvent(telmetry.SUBMIT_TO_KATTIS);
     const srcPath = problem.srcPath;
     const homedir = os.homedir();
     const directoryChar = process.platform == 'win32' ? '\\' : '/';
@@ -81,7 +81,7 @@ export const storeSubmitProblem = (problem: Problem) => {
         sourceCode,
         languageId,
     };
-    globalThis.reporter.sendTelemetryEvent(telmetry.SUBMIT_TO_CODEFORCES);
+    (globalThis as any).reporter.sendTelemetryEvent(telmetry.SUBMIT_TO_CODEFORCES);
     globalThis.logger.log('Stored savedResponse', savedResponse);
 };
 
@@ -176,7 +176,7 @@ export const getProblemFileName = (problem: Problem, ext: string) => {
 
 /** Handle the `problem` sent by Competitive Companion, such as showing the webview, opening an editor, managing layout etc. */
 const handleNewProblem = async (problem: Problem) => {
-    globalThis.reporter.sendTelemetryEvent(telmetry.GET_PROBLEM_FROM_COMPANION);
+    (globalThis as any).reporter.sendTelemetryEvent(telmetry.GET_PROBLEM_FROM_COMPANION);
     // If webview may be focused, close it, to prevent layout bug.
     if (vscode.window.activeTextEditor == undefined) {
         getJudgeViewProvider().extensionToJudgeViewMessage({

@@ -194,7 +194,7 @@ export const checkUnsupported = (srcPath: string): boolean => {
 
 /** Deletes the .prob problem file for a given source code path. */
 export const deleteProblemFile = async (srcPath: string) => {
-    globalThis.reporter.sendTelemetryEvent(telmetry.DELETE_ALL_TESTCASES);
+    (globalThis as any).reporter.sendTelemetryEvent(telmetry.DELETE_ALL_TESTCASES);
     const probPath = getProbSaveLocation(srcPath);
 
     globalThis.logger.log('Deleting problem file', probPath);

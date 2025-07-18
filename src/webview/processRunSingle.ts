@@ -16,7 +16,7 @@ export const runSingleAndSave = async (
     skipTelemetry = false,
 ) => {
     if (!skipTelemetry) {
-        globalThis.reporter.sendTelemetryEvent(telmetry.RUN_TESTCASE);
+        (globalThis as any).reporter.sendTelemetryEvent(telmetry.RUN_TESTCASE);
     }
     globalThis.logger.log('Run and save started', problem, id);
     const srcPath = problem.srcPath;

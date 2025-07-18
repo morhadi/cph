@@ -2,6 +2,7 @@ import { Case, VSToWebViewMessage } from '../../types';
 import { useState, createRef, useEffect } from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
 import React from 'react';
+import LineNumberTextarea from './LineNumberTextarea';
 
 export default function CaseView(props: {
     num: number;
@@ -191,11 +192,10 @@ export default function CaseView(props: {
                         >
                             Copy
                         </div>
-                        <TextareaAutosize
+                        <LineNumberTextarea
                             className="selectable input-textarea"
                             onChange={handleInputChange}
                             value={input}
-                            ref={inputBox}
                             autoFocus={props.doFocus}
                         />
                     </div>
@@ -210,7 +210,7 @@ export default function CaseView(props: {
                         >
                             Copy
                         </div>
-                        <TextareaAutosize
+                        <LineNumberTextarea
                             className="selectable expected-textarea"
                             onChange={handleOutputChange}
                             value={output}
@@ -239,7 +239,7 @@ export default function CaseView(props: {
                                 Set
                             </div>
                             <>
-                                <TextareaAutosize
+                                <LineNumberTextarea
                                     className="selectable received-textarea"
                                     value={trunctateStdout(resultText)}
                                     readOnly
